@@ -1,3 +1,5 @@
+var colors = require('colors');
+
 function Calculate(a,b)
 {
     this.a=a;
@@ -14,9 +16,12 @@ Calculate.prototype.mult = function (){
     return this.a * this.b;
 }
 Calculate.prototype.log = function (){
-    console.log(this.a + '+' + this.b + '='  + this.add() );
-    console.log(this.a + '-' + this.b + '='  + this.sub() );
-    console.log(this.a + '*' + this.b + '='  + this.mult() );
+    var s =  this.a + '+' + this.b + '='  + this.add() ;
+    console.log(s.green);
+    s= this.a + '-' + this.b + '='  + this.sub() ;
+    console.log(s.rainbow);
+    s=this.a + '*' + this.b + '='  + this.mult();
+    console.log(s.yellow);
 }
 
 var c1= new Calculate(5,10);
