@@ -21,3 +21,5 @@ var c1= new Calculate(5,10);
 var c2= new Calculate(50,20);
 c1.log();
 c2.log();
+var func = c1.log;
+setTimeout(func.call(c1), 2000);
