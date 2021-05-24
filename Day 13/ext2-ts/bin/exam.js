@@ -12,7 +12,7 @@ var Exam = /** @class */ (function () {
         console.log("Exam");
         for (var index = 0; index < this.questions.length; index++) {
             var q = this.questions[index];
-            q.print();
+            this.printQuestion(q);
         }
     };
     Exam.prototype.grade = function (correctAnswers) {
@@ -20,11 +20,19 @@ var Exam = /** @class */ (function () {
         var length = Math.min(this.questions.length, correctAnswers.length);
         for (var index = 0; index < length; index++) {
             var correctAns = correctAnswers[index];
-            if (this.questions[index].CorrectIndex == correctAns) {
+            if (this.questions[index].correctIndex == correctAns) {
                 correctCount++;
             }
         }
-        return 100 * (correctCount / length);
+        return 100 * correctCount / this.questions.length;
+    };
+    Exam.prototype.printQuestion = function (q) {
+        console.log(q.caption);
+        for (var index = 0; index < q.answers.length; index++) {
+            var ans = q.answers[index];
+            console.log(index + ". " + ans);
+        }
+        console.log();
     };
     return Exam;
 }());
