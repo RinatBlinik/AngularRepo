@@ -1,0 +1,36 @@
+{
+    "questions": [
+        { "caption": "what do you get if you mix red and yellow",
+            "answers": [
+                "Pink",
+                "Orange",
+                "Green",
+                "White"
+            ],
+            "correctIndex": 1 },
+        { "caption": "what do you get if you mix blue and yellow",
+            "answers": [
+                "Pink",
+                "Orange",
+                "Green",
+                "White"
+            ],
+            "correctIndex": 3 },
+        { "caption": "what do you get if you mix blue and red",
+            "answers": [
+                "Purple",
+                "Cyan",
+                "magenta",
+                "White"
+            ],
+            "correctIndex": 2 },
+        { "caption": "what do you get if you mix green and magenta",
+            "answers": [
+                "Ichs",
+                "Brown",
+                "Green",
+                "White"
+            ],
+            "correctIndex": 3 }
+    ]
+}

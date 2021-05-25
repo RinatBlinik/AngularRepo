@@ -9,7 +9,7 @@ export class Exam{
         console.log("Exam");
         for (let index = 0; index < this.questions.length; index++) {
             let q = this.questions[index];
-            q.print();
+            this.printQuestion(q);
         }
     }
 
@@ -18,12 +18,21 @@ export class Exam{
         let length = Math.min(this.questions.length, correctAnswers.length);
         for (let index = 0; index < length; index++) {
             let correctAns = correctAnswers[index];
-            if(this.questions[index].CorrectIndex == correctAns){
+            if(this.questions[index].correctIndex == correctAns){
                 correctCount++;
             }
         }
-        return 100 * (correctCount/length);
+        return 100 * correctCount/this.questions.length;
 
+    }
+
+    private printQuestion(q: Question){
+        console.log(q.caption);
+        for (let index = 0; index < q.answers.length; index++) {
+            let ans = q.answers[index];
+            console.log(`${index}. ${ans}`);
+        }
+        console.log();
     }
 
 }
