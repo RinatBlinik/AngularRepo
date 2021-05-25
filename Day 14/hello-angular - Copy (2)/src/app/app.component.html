@@ -1,0 +1,25 @@
+<div>
+    <label>a</label>
+    <input #inputA (input)="setA(inputA.value)" 
+        type="number" 
+        [disabled]="isBusy">
+    <label>b</label>
+    <input #inputB (input)="setB(inputB.value)" 
+        type="number" 
+        [disabled]="isBusy">
+</div>
+
+<div>
+    <button (click)="calculate()" [disabled]="">Go!</button>
+</div>
+<ul *ngIf="show" >
+    <li >
+        {{inputA.value}} +  {{inputB.value}} = {{resultAdd}}
+    </li>
+    <li >
+        {{inputA.value}} -  {{inputB.value}} = {{resultSub}}
+    </li>
+    <li >
+        {{inputA.value}} *  {{inputB.value}} = {{resultMult}}
+    </li>
+</ul>

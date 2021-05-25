@@ -1,0 +1,19 @@
+label {
+    height: 40px;
+    width: 40px;
+    border: none;
+    font-size: medium;
+    margin: 5px;
+}
+
+input {
+    height: 30px;
+    width: 70px;
+}
+div{
+    margin: 10px;
+}
+button{
+    margin: 10px;
+    width: 180px;
+}
