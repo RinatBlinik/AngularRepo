@@ -12,7 +12,6 @@ export class AppComponent {
   resultAdd: number = 0;
   resultSub: number = 0;
   resultMult: number = 0;
-  isBusy: boolean = false;
   show: boolean=false;
   emptyA: boolean = true;
   emptyB: boolean = true;

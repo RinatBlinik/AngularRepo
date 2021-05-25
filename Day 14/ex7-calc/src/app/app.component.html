@@ -2,16 +2,14 @@
 <div>
     <label>A</label>
     <input #inputA (input)="setA(inputA.value)" 
-        type="number" 
-        [disabled]="isBusy">
+        type="number" >
     <label>B</label>
     <input #inputB (input)="setB(inputB.value)" 
-        type="number" 
-        [disabled]="isBusy">
+        type="number" >
 </div>
 
 <div>
-    <button (click)="calculate()" [disabled]="">Go!</button>
+    <button (click)="calculate()" >Go!</button>
 </div>
 <ul *ngIf="show" >
     <li >
