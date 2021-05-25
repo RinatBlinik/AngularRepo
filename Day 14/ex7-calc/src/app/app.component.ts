@@ -48,11 +48,4 @@ calculate() {
     this.resultSub = this.a-this.b;
     this.resultMult = this.a*this.b;
 }
-        // this.results = [
-        //     this.a + "+" + this.b + "=" + (this.a+this.b), 
-        //     this.a + "-" + this.b + "=" + (this.a-this.b), 
-        //     this.a + "*" + this.b + "=" + (this.a*this.b)
-        // ];
-
-
 }
