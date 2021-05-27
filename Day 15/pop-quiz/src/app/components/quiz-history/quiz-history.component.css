@@ -3,7 +3,9 @@
     grid-template-columns: 1fr;
     flex-direction: column;
     align-items: flex-start;
+    border: none;
 }
+
 .red{
     border:3px solid red;
     border-radius: 4px;
@@ -29,5 +31,6 @@ div {
     max-width: 500px;
     height: auto;
     width: 100%;
-    margin: 3px;
+    margin-bottom: 3px;
+    padding: 3px;
 }
