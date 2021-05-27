@@ -1,0 +1,14 @@
+
+<div class="title-area">
+  <app-title caption="Colors Quiz" color="seagreen" ></app-title>
+</div>
+<div class="question-area" *ngIf="!isDone">
+  <app-question [question]="questions[currentIndex]"
+                (selection)="selectAnswer($event)"></app-question>
+</div>
+<div class="quiz-result-area"*ngIf="isDone">
+  <app-quiz-result [score]="score" ></app-quiz-result>
+</div>
+<div class="quiz-history-area">
+  <app-quiz-history [questionsAndAnswers]="history" ></app-quiz-history>
+</div>

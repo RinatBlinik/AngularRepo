@@ -1,0 +1,9 @@
+
+<h1>{{question.caption}}</h1>
+<ol>
+    <li *ngFor="let item of question.answers,let idx=index"
+        (click)=updateAnswer(idx)>
+        {{item}}
+    </li>
+</ol>
+

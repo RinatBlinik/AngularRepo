@@ -1,0 +1,17 @@
+:host {
+    display: grid;
+
+    grid-template-rows: auto  1fr;
+    grid-template-columns: 1fr  auto;
+
+}
+
+div {
+    border: 1px solid gray;
+    margin: 4px;
+    border-radius: 8px;
+}
+
+.title-area {
+    grid-column: 1 / -1;
+}

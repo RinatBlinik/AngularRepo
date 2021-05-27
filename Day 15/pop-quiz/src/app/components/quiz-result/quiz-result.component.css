@@ -1,0 +1,27 @@
+:host {
+    display: grid;
+    grid-template-rows: 1fr  1fr 1fr;
+    background-color: aquamarine;
+}
+
+h2, h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px;
+    background-color: transparent;
+}
+h1 {
+    animation: 5s linear 1s slidein infinite;
+    overflow: hidden;
+    width: 100%;
+    white-space: nowrap;
+    font-size: 80px;
+}
+h2{
+    font-size: 30px;
+}
+@keyframes slidein {
+    from { transform: scaleX(0); }
+    to   { transform: scaleX(1); }
+  }
