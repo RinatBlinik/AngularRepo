@@ -1,0 +1,1 @@
+export type historyItem = [question: string,userAnswer: number,textAnswer: string, isCorrect: boolean];

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Question } from './model/question';
 import { QuizQuestions } from './model/quiz-questions';
-import {historyItem } from './components/quiz-history/quiz-history.component'
+import { historyItem } from 'src/app/model/types';
+import { Observable } from 'rxjs';
+import { QuizService } from './services/quiz.service';
 
 
 @Component({
@@ -9,36 +11,15 @@ import {historyItem } from './components/quiz-history/quiz-history.component'
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
 
   // data
   title = 'pop-quiz';
-  currentIndex = 0;
-  questions :Question[]=QuizQuestions.questions;
-  score: number = 0;
-  history: historyItem[]=[];
-  isDone: boolean = false;
-  // methods
- selectAnswer(index: number){
-   let question = this.questions[this.currentIndex];
-   question.userAnswer = index;
-   this.history.push([question.caption, question.userAnswer,question.answers[index], question.correctAnswer === index]);
-   this.currentIndex++;
-   if(this.currentIndex === this.questions.length){
-     this.isDone = true;
-     this.score = this._calculateScore();
-   }
+  isDone$!:Observable<boolean>;
+  
+  constructor(private quizService:QuizService) { }
+  ngOnInit(): void {
+    this.isDone$ = this.quizService.isQuizOver();
   }
-
-    private _calculateScore(): number {
-      let counter =0;
-      for (let question of this.questions) {
-      if(question.userAnswer === question.correctAnswer ){
-        counter++;
-      }
-      }
-     return counter/this.questions.length * 100;
-   }
-
  
 }

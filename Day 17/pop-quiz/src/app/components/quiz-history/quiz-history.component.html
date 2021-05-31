@@ -1,6 +1,6 @@
 <h1>Results</h1>
 <div>
-<div *ngFor="let item of questionsAndAnswers" [class]="_getClass(item)">
+<div *ngFor="let item of (questionsAndAnswers$ | async)" [class]="_getClass(item)">
     <p>{{item[0]}}</p>
     <p>Answer: {{item[1]}} ({{item[2]}})</p>
 </div>

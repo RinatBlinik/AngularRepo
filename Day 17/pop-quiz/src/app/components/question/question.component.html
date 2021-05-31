@@ -1,7 +1,7 @@
 
-<h1>{{question.caption}}</h1>
+<h1>{{(question$ | async)?.caption}}</h1>
 <ol>
-    <li *ngFor="let item of question.answers,let idx=index"
+    <li *ngFor="let item of (question$ | async)?.answers,let idx=index"
         (click)=updateAnswer(idx)>
         {{item}}
     </li>

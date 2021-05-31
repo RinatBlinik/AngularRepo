@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Question } from 'src/app/model/question';
+import { QuizService } from 'src/app/services/quiz.service';
 
 @Component({
   selector: 'app-question',
@@ -8,30 +10,17 @@ import { Question } from 'src/app/model/question';
 })
 export class QuestionComponent implements OnInit {
   // data
-  @Input()
-  question: Question = {
-    caption: 'what', 
-    answers: [
-        'Pink', 
-        'Orange', 
-        'Green', 
-        'White'
-    ], 
-    correctAnswer: 1,
-    userAnswer: 0
-};
-@Output()
-  selection = new EventEmitter<number>();
+  question$!: Observable<Question>;
 
-  constructor() { }
+  constructor(private quizService: QuizService) { }
 
   ngOnInit(): void {
+    this.question$ = this.quizService.getCurrentQuestion();
   }
 
-  updateAnswer(index: number){
-    this.question.userAnswer=index;
-    this.selection.emit(index);
+  updateAnswer(index: number) {
+
+    this.quizService.setAnswer(index);
+
   }
-
-
 }
