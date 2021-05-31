@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+div {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+}
+span {
+    width: 90px;
+    font-size: 25px;
+    font-weight: bold;
+}
+span.red {  
+    color: rgb(136, 16, 36);
+}
+span.green {  
+    color: rgb(6, 97, 15);
+}
+span.blue {  
+    color: rgb(38, 10, 136);
+}
+input{
+    width: 150px;
+    color:  rgb(7, 77, 77);
+}

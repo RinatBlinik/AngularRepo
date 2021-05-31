@@ -1,0 +1,25 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+.game {
+    display: flex;
+    flex-direction: row;
+}
+app-color-editor {
+    padding-top: 65px;
+}
+button {
+    width: 150px;
+    height: 70px;
+    background: linear-gradient(100deg ,rgb(117, 60, 60) 20%,rgb(132, 197, 132) 50%,rgb(140, 140, 211) );
+    font-size: 20px;
+    font-weight: bold;
+}
+.center {
+    margin: auto;
+}
+h2 {
+    text-align: center;
+    font-size: 50px;
+}

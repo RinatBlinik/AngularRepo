@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from './services/game.service';
-import { Observable } from 'rxjs';
+import { combineLatest, Observable } from 'rxjs';
 import { map} from 'rxjs/operators';
 
 @Component({
@@ -10,22 +10,24 @@ import { map} from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
    
-    private computer$!: Observable<number[]>;
     computerRgb$! : Observable<string>;
-
+    userRgb$! : Observable<string>;
+    isSuccess$! : Observable<boolean> ;
 
     constructor (private gameService: GameService){
 
     }
 
     ngOnInit(): void {
-        this.computer$ = this.gameService.getComputerColor();
-        this.computerRgb$ = this.computer$.pipe(map(rgb => this.toRgbString(rgb[0],rgb[1],rgb[2])));
+        this.computerRgb$ = this.gameService.getComputerColor().pipe(map(rgb => this.toRgbString(rgb[0],rgb[1],rgb[2])));
+        this.userRgb$ = combineLatest(this.gameService.getRed(),
+                                      this.gameService.getGreen(),
+                                      this.gameService.getBlue()).pipe(map(rgb => this.toRgbString(rgb[0],rgb[1],rgb[2])));
+        this.isSuccess$ =   combineLatest(this.computerRgb$, this.userRgb$).pipe(map(pair => pair[0] === pair[1]));                         
     }
 
     randomizeColor() {
         this.gameService.randomizeColor();
-        this.computer$ = this.gameService.getComputerColor();
     }
     private toRgbString(r: number,g: number,b: number): string {
          return 'rgb(' + r + ',' + g + ',' + b + ')';        

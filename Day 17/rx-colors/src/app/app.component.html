@@ -1,4 +1,13 @@
-<app-color-box title="Computer" colorRgb="computerRgb$ | async">
+<div class="game">
+    <app-color-editor></app-color-editor>
 
-</app-color-box>
-<button (click)="randomizeColor()">Random Color</button>
+    <app-color-box title="Your Guess" [colorRgb]="userRgb$ | async">
+    </app-color-box>
+    
+    <app-color-box title="Computer" [colorRgb]="computerRgb$ | async">
+    </app-color-box>
+    <div class="center">
+        <button (click)="randomizeColor()">Random Color</button>
+    </div>
+</div>
+<h2 *ngIf="isSuccess$ |async" [style.color]="userRgb$ | async">Success!!!</h2>

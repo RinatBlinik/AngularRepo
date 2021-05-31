@@ -12,14 +12,8 @@ export class ColorBoxComponent implements OnInit {
     title: string = 'color-box';
 
     @Input()
-    private _colorRgb: string = 'rgb(100,0,0)';
+    colorRgb: string | null = 'rgb(0,0,0)';
     
-    public get colorRgb(): string {
-        return this._colorRgb;
-    }
-    public set colorRgb(value: string) {
-        this._colorRgb = value;
-    }
   
     constructor(private gameService: GameService) {
 
