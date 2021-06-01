@@ -11,17 +11,20 @@ import { boardValue, gameStatus, GameStatus } from '../models/types';
 })
 export class GameService implements OnInit {
 
-  private gameBoared!: BoardItem[];
-  private gameBoared$ = new BehaviorSubject(this.gameBoared);
+  private gameBoared: BoardItem[] = [];
+  private gameBoared$!:BehaviorSubject<BoardItem[]>; 
   private player: boardValue = "x";
 
-  constructor() { }
-
-  ngOnInit(): void {
-    for (let index = 0; index < 9; index++) {
+  constructor() {
+    for (let index = 0; index < 10; index++) {
       let bi: BoardItem = { id: index, value: "", isAvailable: true };
       this.gameBoared.push(bi);
     }
+    this.gameBoared$ = new BehaviorSubject(this.gameBoared);
+   }
+
+  ngOnInit(): void {
+     
   }
 
   private _setBoardItem(id: number): boolean {
@@ -32,7 +35,7 @@ export class GameService implements OnInit {
     this.gameBoared[id].isAvailable = false;
     return true;
   }
-  
+
   private _setNextPlayer() {
     if (this.player === "x")
       this.player = "O";
@@ -80,31 +83,35 @@ export class GameService implements OnInit {
     }
   }
   private _isBoardFull(): boolean {
-    for (let index = 0; index < this.gameBoared.length; index++) {
+    for (let index = 1; index < this.gameBoared.length; index++) {
       if (this.gameBoared[index].value === "") {
         return false;
       }
     }
     return true;
   }
-getPlayer():Observable<boardValue>{
-  return this.gameBoared$.pipe(map(gb => this.player));
-}
+  getPlayer(): Observable<boardValue> {
+    return this.gameBoared$.pipe(map(gb => this.player));
+  }
   getBoardItem(id: number): Observable<BoardItem> {
     return this.gameBoared$.pipe(map(gb => gb[id]));
   }
   setBoardItem(id: string) {
     let res = this._setBoardItem(Number(id));
     if (res) {
-      this._setNextPlayer();
-      this.gameBoared$.next(this.gameBoared);
+      if (this._checkBoard() === GameStatus.NotFinished)
+      {
+        this._setNextPlayer();
+      }   
     }
+    this.gameBoared$.next(this.gameBoared);
 
   }
   getGameStatus(): Observable<GameStatus> {
     return this.gameBoared$.pipe(map(gb => this._checkBoard()));
   }
 
+  isGameOver(): Observable<boolean> {
+    return this.gameBoared$.pipe(map(gb => this._checkBoard() != GameStatus.NotFinished));
+  }
 }
-
-

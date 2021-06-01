@@ -1,5 +1,17 @@
 :host {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr auto;
+    grid-template-columns:  1fr 1fr 1fr ;
+    padding: 20px;
+    padding-left: 20%;
+    padding-right: 20%;
+    background-color: rgb(185, 224, 224); ;;
+}
+.status {
+    grid-row: 1;
+    grid-column: 1/-1;
+    padding: 10px;
+    text-align: center;
+    color: rgb(8, 48, 48);
+    background-color:rgb(98, 136, 136); 
 }

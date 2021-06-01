@@ -23,6 +23,7 @@ export class BoardItemComponent implements OnInit {
     this.boardItem$ = this.gameService.getBoardItem(this.id);
   }
   onItemClick(){
+    console.log("item ${id} clicked")
     this.gameService.setBoardItem(this.id.toString())
   }
 
