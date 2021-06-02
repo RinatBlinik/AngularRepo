@@ -1,0 +1,38 @@
+:host {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr;
+    margin: 30px;
+    background-color: rgb(111, 153, 153);
+    padding: 20px;
+    height: 80%;
+}
+h4, h3, h2, p, span {
+    margin: 30px;
+    text-align: center;
+}
+.box {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+button {
+    width: 90px;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid rgb(63, 77, 63);
+    background-color: rgb(158, 179, 158);
+    font-weight: 900;
+    font-size: 30px;
+}
+.red {
+    color: red;
+}
+.punchlineButton{
+    width: auto;
+    margin: auto;
+    padding: 10px;
+    border: 2px solid rgb(14, 73, 83);
+    background-color: rgb(228, 163, 222);
+    font-weight: 500;
+    font-size: 20px;
+}

@@ -1,0 +1,18 @@
+<h1>Search Jokes</h1>
+<div *ngIf="(types$ | async) as types">
+    <h3>Select jokes type:</h3>
+    <select [(ngModel)]="selectedType">
+        <option>
+            all types
+        </option>
+        <option *ngFor="let t of types" >
+            {{t}}
+        </option>
+    </select>
+</div>
+
+<div>
+    <h3>Search jokes by text:</h3>
+    <input #searchBox>
+</div>
+<button (click)="searchByType(searchBox.value, selectedType)">Search</button>
