@@ -1,0 +1,13 @@
+:host {
+    padding: 100px;;
+}
+div {
+    padding: 10px;
+}
+input {
+    height: auto;
+}
+form .ng-invalid {
+    outline: none;
+    border: 2px solid red;
+}

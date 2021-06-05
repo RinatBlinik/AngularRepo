@@ -1,0 +1,21 @@
+<form [formGroup]="movieForm" (ngSubmit)="save()">
+<div>Movie Caption</div>
+    <div>
+    <input type="text" formControlName="caption">
+</div>
+
+<div>Movie Description</div>
+    <div>
+    <textarea  type="text" formControlName="description"></textarea>
+</div>
+
+<div>Movie Poster</div>
+    <div>
+    <textarea type="text" formControlName="poster"></textarea>
+</div>
+
+<p>
+    <button [disabled]="movieForm.invalid">Save</button>
+</p>
+
+</form>
