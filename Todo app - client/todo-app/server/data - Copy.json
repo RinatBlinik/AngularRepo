@@ -1,0 +1,71 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "caption": "add x",
+      "listId": 5,
+      "isCompleted": true
+    },
+    {
+      "id": 2,
+      "caption": "add x",
+      "listId": 4,
+      "isCompleted": false
+    },
+    {
+      "id": 3,
+      "caption": "add x",
+      "listId": 4,
+      "isCompleted": true
+    },
+    {
+      "id": 6,
+      "caption": "add x",
+      "listId": 4,
+      "isCompleted": false
+    },
+    {
+      "id": 10,
+      "caption": "add x",
+      "listId": 3,
+      "isCompleted": false
+    }
+  ],
+  "lists": [
+    {
+      "id": 1,
+      "caption": "add x",
+      "description": "aaaa aaa aaa aa aaa aaa aaa a aaa aaa aaa aaa ",
+      "icon": "lunch_dining",
+      "color": "brown"
+    },
+    {
+      "id": 2,
+      "caption": "a22dd x",
+      "description": "aaaa aaa aaa aa aaa aaa aaa a aaa aaa aaa aaa ",
+      "icon": "lunch_dining",
+      "color": "brown"
+    },
+    {
+      "id": 3,
+      "caption": "Flights and Trips",
+      "description": "my trips arrangement and flights booking, hotels and cars .",
+      "icon": "deck",
+      "color": "pink"
+    },
+    {
+      "id": 4,
+      "caption": "shopping",
+      "description": "Shopping is an activity in which a customer browses the available goods or services presented by one or more retailers with the potential intent to purchase a suitable selection of them. A typology of shopper types has been developed by scholars which identifies one group of shoppers as recreational shoppers,[1] that is, those who enjoy shopping and view it as a leisure activity",
+      "icon": "shopping_cart",
+      "color": "red"
+    },
+    {
+      "id": 5,
+      "caption": "flights",
+      "description": "מחירים הם מחירים סופיים וכוללים את כל המיסים והעמלות, לרבות עמלות על אמצעי התשלום הנפוץ הזול ביותר (שעשוי להשתנות בהתאם לספק). ייתכן שיחולו חיובים נוספים בגין סוגי תשלום אחרים, כבודה, ארוחות, WLAN או שירותים נוספים אחרים. המחירים, הזמינות ופרטי הנסיעות שמוצגים מבוססים על המידע העדכני ביותר שהתקבל מהשותפים שלנו.",
+      "icon": "flight_takeoff",
+      "color": "green"
+    }
+  ]
+}

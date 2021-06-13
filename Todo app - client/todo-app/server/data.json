@@ -1,0 +1,52 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "caption": "Fruits and Milk",
+      "listId": 1,
+      "isCompleted": false
+    },
+    {
+      "id": 2,
+      "caption": "clothes and shoes",
+      "listId": 1,
+      "isCompleted": true
+    },
+    {
+      "id": 3,
+      "caption": "and mor ....",
+      "listId": 1,
+      "isCompleted": false
+    }
+  ],
+  "lists": [
+    {
+      "id": 1,
+      "caption": "shopping",
+      "description": "all my shopping todo list do not forget any of it",
+      "icon": "shopping_cart",
+      "color": "purple"
+    },
+    {
+      "id": 3,
+      "caption": "Event food",
+      "description": "food for my coming event on the next month . ",
+      "icon": "lunch_dining",
+      "color": "blue"
+    },
+    {
+      "id": 4,
+      "caption": "Event food new zz",
+      "description": "food for my coming event on the next month . ",
+      "icon": "lunch_dining",
+      "color": "blue"
+    },
+    {
+      "id": 5,
+      "caption": "shopping",
+      "description": "all my shopping todo list do not forget any of it",
+      "icon": "shopping_cart",
+      "color": "purple"
+    }
+  ]
+}
