@@ -5,14 +5,20 @@ import { TodoList } from '../models/todo-list.model';
 import { filter, first, map } from 'rxjs/operators';
 import { combineLatest, Observable } from 'rxjs';
 import { CombineLatestOperator } from 'rxjs/internal/observable/combineLatest';
+import { ConfigService } from './config.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  readonly baseUrl: string = 'http://localhost:3000';
+  //readonly baseUrl: string = 'http://localhost:3000';
+  //readonly baseUrl: string = 'http://localhost:49163/api';
+  //readonly baseUrl: string = 'http://localhost:5000/api';
+  readonly baseUrl!: string ;
 
-  constructor(private http: HttpClient) { }
+  constructor(private configService:ConfigService, private http: HttpClient) {
+    this.baseUrl = this.configService.baseUrl;
+   }
 
   getAllItems(): Promise<TodoItem[]> {
     const url = `${this.baseUrl}/items`;
@@ -75,7 +81,7 @@ return this.http
     return this.http
       .get<TodoItem[]>(url)
       .pipe(
-        map(items => items.filter(i => i.isCompleted)),
+        map(items => items.filter(i => !i.isCompleted)),
         map(lists => lists.length))
       .toPromise();
   }

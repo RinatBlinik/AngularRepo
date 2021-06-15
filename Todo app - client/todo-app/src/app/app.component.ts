@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { config } from 'rxjs';
+import { ConfigService } from './core/services/config.service';
 import { StyleService } from './core/services/style.service';
 
 @Component({
@@ -8,11 +10,11 @@ import { StyleService } from './core/services/style.service';
 })
 export class AppComponent implements OnInit{
   title = 'todo-app';
- 
-  constructor() {   
+ header!:string;
+  constructor(private configService:ConfigService) {   
   }
   ngOnInit(): void {
-    
+    this.header = this.configService.appName;
   }
 
 }
